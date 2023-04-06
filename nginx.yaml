@@ -1,0 +1,13 @@
+---
+- name: Install Nginx
+  hosts: all
+  remote_user: ubuntu
+  become: yes
+  vars:
+    server_name: "{{ ansible_default_ipv4.address }}"
+    document_root: /var/www/html
+    app_root: site
+
+
+  roles:
+  - nginx
